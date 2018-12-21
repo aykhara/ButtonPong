@@ -1,0 +1,291 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Button Pong",
+		"_postman_id": "72b1daf9-35ba-c8ab-3cd2-49f40e0c3a36",
+		"description": "A collection for testing the Button Pong API. Please refer to usage instructions online at: https://github.com/brentstineman/ButtonPong",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API - Pong (ping response)",
+			"request": {
+				"url": {
+					"raw": "{{hosturl}}/api/pong?code={{DefaultHostKey}}",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"pong"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "{{DefaultHostKey}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"deviceId\" : \"mydeviceid\",\n  \"success\" : true\n}"
+				},
+				"description": "Send a \"ping\" response or \"pong\" message to the Button Pong API. "
+			},
+			"response": []
+		},
+		{
+			"name": "API - Register Device",
+			"request": {
+				"url": {
+					"raw": "{{hosturl}}/api/devices?code={{DefaultHostKey}}",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"devices"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "{{DefaultHostKey}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deviceId\": \"mydeviceid\",\r\n    \"accessToken\": \"myaccesstoken\"\r\n}"
+				},
+				"description": "Register a device with the Button Pong API"
+			},
+			"response": []
+		},
+		{
+			"name": "API - Start Game",
+			"request": {
+				"url": {
+					"raw": "{{hosturl}}/api/game?code={{DefaultHostKey}}",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"game"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "{{DefaultHostKey}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Starts the game"
+			},
+			"response": []
+		},
+		{
+			"name": "API - Reset Game",
+			"request": {
+				"url": {
+					"raw": "{{hosturl}}/api/game?code={{DefaultHostKey}}",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"game"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "{{DefaultHostKey}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Resets the Game"
+			},
+			"response": []
+		},
+		{
+			"name": "API - Get Game State",
+			"request": {
+				"url": {
+					"raw": "{{hosturl}}/api/game?code={{DefaultHostKey}}",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"game"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "{{DefaultHostKey}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get the current game state bag"
+			},
+			"response": []
+		},
+		{
+			"name": "device - Start Signal",
+			"request": {
+				"url": {
+					"raw": "https://api.particle.io/v1/devices/{{deviceid}}/startGame?access_token={{ParticleAccessKey}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"particle",
+						"io"
+					],
+					"path": [
+						"v1",
+						"devices",
+						"{{deviceid}}",
+						"startGame"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{ParticleAccessKey}}",
+							"equals": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Sends a \"game start\" signal to the device"
+			},
+			"response": []
+		},
+		{
+			"name": "device - Ping Signal",
+			"request": {
+				"url": {
+					"raw": "https://api.particle.io/v1/devices/{{deviceid}}/ping?access_token={{ParticleAccessKey}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"particle",
+						"io"
+					],
+					"path": [
+						"v1",
+						"devices",
+						"{{deviceid}}",
+						"ping"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{ParticleAccessKey}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "arg",
+							"value": "2000",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Sends a \"ping\" signal to the device to tell the player its time to press a button"
+			},
+			"response": []
+		}
+	]
+}

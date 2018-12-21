@@ -1,0 +1,16 @@
+{
+    "event": "register",
+    "url": "https://lacecsefunction01.azurewebsites.net/api/devices",
+    "requestType": "POST",
+    "noDefaults": true,
+    "rejectUnauthorized": true,
+    "json": {
+        "deviceId": "{{PARTICLE_DEVICE_ID}}",
+        "accesstoken": "911d95044fcfbeae204498a94d0c3b1631fd7af9",
+        "name": "{{PARTICLE_EVENT_NAME}}",
+        "data": "{{PARTICLE_EVENT_VALUE}}"
+    },
+    "query": {
+        "code": "3PvmmWbxlmdu/5cAvHrfdSmVrGwMrC7TeTre0jI1adx378Ah2zAlFQ=="
+    }
+}

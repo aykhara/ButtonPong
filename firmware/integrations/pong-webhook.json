@@ -1,0 +1,14 @@
+{
+    "event": "pong",
+    "url": "https://lacecsefunction01.azurewebsites.net/api/pong",
+    "requestType": "PUT",
+    "noDefaults": true,
+    "rejectUnauthorized": true,
+    "json": {
+        "deviceId": "{{PARTICLE_DEVICE_ID}}",
+        "success": "{{PARTICLE_EVENT_VALUE}}"
+    },
+    "query": {
+        "code": "3PvmmWbxlmdu/5cAvHrfdSmVrGwMrC7TeTre0jI1adx378Ah2zAlFQ=="
+    }
+}
